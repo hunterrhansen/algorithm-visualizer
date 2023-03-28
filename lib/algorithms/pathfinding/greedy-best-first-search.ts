@@ -18,14 +18,16 @@ export function greedyBFS(grid: Grid, startNode: GridNode, finishNode: GridNode)
 
     updateUnvisitedNeighbors(closestNode, grid, finishNode);
   }
+
+  return visitedNodesInOrder;
 }
 
-function sortNodesByHeuristic(unvisitedNodes: any) {
+function sortNodesByHeuristic(unvisitedNodes: GridNode[]) {
   unvisitedNodes.sort((nodeA: any, nodeB: any) => nodeA.heuristic - nodeB.heuristic);
 }
 
-function updateUnvisitedNeighbors(node: any, grid: any, finishNode: any) {
-  const unvisitedNeighbors = getTraversableNeighbors(node, grid);
+function updateUnvisitedNeighbors(node: GridNode, grid: Grid, finishNode: GridNode) {
+  const unvisitedNeighbors: GridNode[] = getTraversableNeighbors(node, grid);
   for (const neighbor of unvisitedNeighbors) {
     neighbor.previousNode = node;
     neighbor.heuristic = heuristic(neighbor, finishNode);

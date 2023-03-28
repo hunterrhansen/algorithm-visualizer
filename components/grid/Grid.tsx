@@ -38,11 +38,11 @@ const FINISH_NODE_COL = NUM_COLS - START_NODE_COL - 1;
 export default function Pathfinder() {
   const [mouseIsPressed, setMouseIsPressed] = React.useState(false);
   const [grid, setGrid] = React.useState<Grid>([]);
-  const [startNode, setStartNode] = React.useState({
+  const [startNode, setStartNode] = React.useState<GridLocation>({
     row: START_NODE_ROW,
     col: START_NODE_COL,
   });
-  const [finishNode, setFinishNode] = React.useState({
+  const [finishNode, setFinishNode] = React.useState<GridLocation>({
     row: FINISH_NODE_ROW,
     col: FINISH_NODE_COL,
   });

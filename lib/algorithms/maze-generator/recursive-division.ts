@@ -1,13 +1,13 @@
-import { Grid, GridNode } from "@/types";
+import { Grid, GridLocation, GridNode } from "@/types";
 
-let walls: any[];
-export function recursiveDivisionMaze(grid: Grid, startNode: GridNode, finishNode: GridNode) {
+let walls: GridNode[];
+export function recursiveDivisionMaze(grid: Grid, startNode: GridLocation, finishNode: GridLocation) {
   if (!startNode || !finishNode || startNode === finishNode) {
-    return false;
+    return [];
   }
   let vertical = range(grid[0].length);
   let horizontal = range(grid.length);
-  walls = [];
+  walls= [];
   getRecursiveWalls(vertical, horizontal, grid, startNode, finishNode);
   return walls;
 }
@@ -23,7 +23,7 @@ function range(len: any) {
 //dir === 0 => Horizontal
 //dir === 1 => Vertical
 
-function getRecursiveWalls(vertical: any, horizontal: any, grid: Grid, startNode: GridNode, finishNode: GridNode) {
+function getRecursiveWalls(vertical: any, horizontal: any, grid: Grid, startNode: GridLocation, finishNode: GridLocation) {
   if (vertical.length < 2 || horizontal.length < 2) {
     return;
   }

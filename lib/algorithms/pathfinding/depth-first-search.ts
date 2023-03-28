@@ -2,11 +2,13 @@ import { Grid, GridNode } from "@/types";
 import { getTraversableNeighbors } from "./helper";
 
 export function dfs(grid: Grid, startNode: GridNode, finishNode: GridNode) {
-  const visitedNodesInOrder = []; // closed list
+  const visitedNodesInOrder: GridNode[] = []; // closed list
   const stack = [startNode]; // open list
 
   while (stack.length > 0) {
     const node = stack.pop();
+
+    if (!node) return visitedNodesInOrder;
 
     if (node.isVisited) continue;
     if (node === finishNode) return visitedNodesInOrder;

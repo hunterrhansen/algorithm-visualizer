@@ -2,7 +2,7 @@ import { Grid, GridNode } from "@/types";
 import { getAllNodes, getTraversableNeighbors } from "./helper";
 
 export function dijkstra(grid: Grid, startNode: GridNode, finishNode: GridNode) {
-  const visitedNodesInOrder = []; // closed list
+  const visitedNodesInOrder: GridNode[] = []; // closed list
   const unvisitedNodes = getAllNodes(grid); // open list
   startNode.distance = 1; // g-cost, distance from start node to current node
 
@@ -18,6 +18,8 @@ export function dijkstra(grid: Grid, startNode: GridNode, finishNode: GridNode) 
 
     updateUnvisitedNeighbors(closestNode, grid);
   }
+
+  return visitedNodesInOrder;
 }
 
 function sortNodesByDistance(unvisitedNodes: any) {

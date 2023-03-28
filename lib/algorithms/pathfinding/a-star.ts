@@ -16,6 +16,8 @@ export function astar(grid: Grid, startNode: GridNode, endNode: GridNode) {
     if (closestNode === endNode) return visitedNodesInOrder; // if we reach the end node, we're done
     updateUnvisitedNeighbors(closestNode, grid, endNode); // update unvisited neighbors
   }
+
+  return visitedNodesInOrder;
 }
 
 // sort nodes by f-cost and h-cost
