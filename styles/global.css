@@ -1,0 +1,153 @@
+.grid {
+  margin: 100px 0 0;
+}
+
+.grid-row {
+  margin: -6px;
+}
+
+.node {
+  width: 1.5rem;
+  height: 1.5rem;
+  outline: 1px solid #747474;
+  display: inline-block;
+  margin: 0;
+}
+
+.node-start {
+  background-color: #EB5353;
+}
+
+.node-finish {
+  background-color: #36AE7C;
+}
+
+.node-weight {
+  background-color: #242424;
+}
+
+.node-wall {
+  background-color: #747474;
+}
+
+.node-visited {
+  animation-name: visitedAnimation;
+  animation-duration: 1.0s;
+  animation-timing-function: ease-out;
+  animation-delay: 0;
+  animation-direction: alternate;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+}
+
+@keyframes visitedAnimation {
+  0% {
+    transform: scale(0.3);
+    background-color: #2B7A0B;
+    border-radius: 100%;
+  }
+
+  50% {
+    background-color: #7DCE13;
+  }
+
+  75% {
+    transform: scale(1.2);
+    background-color: #EAE509;
+  }
+
+  100% {
+    transform: scale(1);
+    background-color: #5BB318;
+  }
+}
+
+.node-visited-weight {
+  animation-name: visitedWeightAnimation;
+  animation-duration: 1.0s;
+  animation-timing-function: ease-out;
+  animation-delay: 0;
+  animation-direction: alternate;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+}
+
+@keyframes visitedWeightAnimation {
+  0% {
+    transform: scale(0.3);
+    background-color: #174206;
+    border-radius: 100%;
+  }
+
+  50% {
+    background-color: #69ae0f;
+  }
+
+  75% {
+    transform: scale(1.2);
+    background-color: #9d9a06;
+  }
+
+  100% {
+    transform: scale(1);
+    background-color: #2d5a0b;
+  }
+}
+
+.node-shortest-path {
+  animation-name: shortestPath;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-delay: 0;
+  animation-direction: alternate;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+}
+
+@keyframes shortestPath {
+  0% {
+    transform: scale(0.6);
+    background-color: #FFD93D;
+  }
+
+  50% {
+    transform: scale(1.2);
+    background-color: #FFD93D;
+  }
+
+  100% {
+    transform: scale(1);
+    background-color: #FFD93D;
+  }
+}
+
+.node-shortest-path-weight {
+  animation-name: shortestPathWeight;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-delay: 0;
+  animation-direction: alternate;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+}
+
+@keyframes shortestPathWeight {
+  0% {
+    transform: scale(0.6);
+    background-color: #d7b733;
+  }
+
+  50% {
+    transform: scale(1.2);
+    background-color: #d7b733;
+  }
+
+  100% {
+    transform: scale(1);
+    background-color: #d7b733;
+  }
+}
